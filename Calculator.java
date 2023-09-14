@@ -1,20 +1,22 @@
 package com.projekt;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
-import static com.projekt.ArithmeticOperation.calc;
-import static com.projekt.EnterOperation.getOperation;
+import static com.projekt.NextOperation.parsing2;
+import static com.projekt.FirstOperation.parsing;
+
 
 public class Calculator {
-    static Scanner scanner = new Scanner(System.in);
+    static ArrayList list = new ArrayList();
+    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    static String equality = "=";
+    static int result = 0;
 
-    public static void main(String[] args) {
-        int operand1 = scanner.nextInt();
-        int operand2 = scanner.nextInt();
-        int operand3 = scanner.nextInt();
-        char operation = getOperation();
-
-        int result = calc(operand1, operand2, operand3, operation);
-        System.out.println("Результат операции: " + result);
+    public static void main(String[] args) throws IOException {
+        parsing();
+        parsing2();
     }
 }
